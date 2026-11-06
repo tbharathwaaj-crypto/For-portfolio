@@ -1,0 +1,2349 @@
+# PAWSE — Build a Cozy Virtual Pet Companion for Everyday Well-Being
+
+## 1. YOUR ROLE
+
+Act as a senior product designer, UX architect, creative developer, 3D interaction designer, and full-stack engineer.
+
+Design and build a complete, polished, functional web application called **PAWSE**.
+
+Do not create just a landing page, a static dashboard, or a collection of disconnected screens. Build a cohesive product with complete end-to-end user journeys, persistent data, working interactions, realistic state transitions, thoughtful microinteractions, and a consistent visual identity.
+
+The product must combine:
+
+- An immersive, cozy 3D pet room.
+- Interactive virtual dogs and cats.
+- Personal reminders and lightweight task management.
+- Pet feeding and reward mechanics.
+- Gradual pet growth and evolution.
+- Personalized greetings and pet memories.
+- Relaxing animations and delightful microinteractions.
+- Optional XR experiences in future iterations.
+- A responsive experience across desktop, tablet, and mobile.
+
+**Core product philosophy:**
+
+People spend long hours working, studying, managing responsibilities, and dealing with stress. PAWSE gives them a small, comforting space where they can care for a virtual pet while also taking care of themselves.
+
+The pet encourages users to drink water, take breaks, complete personal tasks, learn something new, and maintain healthier daily routines.
+
+Every completed reminder creates an opportunity for a small interaction with the pet. Over time, the pet grows, develops its personality, remembers the user, and becomes a familiar companion.
+
+The product must feel emotionally rewarding without becoming another source of pressure or obligation.
+
+**Product name:** PAWSE  
+**Tagline:** A little break. A happier you.  
+**Primary audience:** Working professionals, students, remote workers, and people who want a more enjoyable way to manage everyday routines.  
+**Primary platform:** Responsive web application, optimized for desktop browsers.  
+**Visual direction:** Cozy, warm, relaxing, playful, premium, and aesthetically rich.  
+**Experience direction:** A living virtual pet room, not a conventional productivity dashboard.
+
+---
+
+# 2. THE CORE EXPERIENCE
+
+The entire product revolves around one central concept:
+
+**The user takes care of their day. Their pet grows alongside them.**
+
+The main environment is a beautiful, persistent virtual room containing the user's pet.
+
+The room should feel like a peaceful personal sanctuary, with sunlight coming through large windows, gentle curtains, indoor plants, wooden furniture, soft rugs, comfortable cushions, bookshelves, toys, and warm ambient lighting.
+
+The pet should appear to inhabit this room naturally.
+
+It can walk around, sleep, stretch, play, react to the user, and interact with selected objects.
+
+The room should never feel completely static. Even when the user does nothing, subtle ambient animations make the environment feel alive.
+
+When the user completes a reminder, they earn a treat or another suitable reward. They can feed their pet, celebrate a small win, or simply enjoy a short interaction.
+
+As the user returns over several days and weeks, the pet grows, unlocks new behaviors, and becomes increasingly familiar.
+
+The experience should create three feelings:
+
+1. **Comfort:** Opening PAWSE feels like entering a peaceful room.
+2. **Connection:** The pet recognizes the user and responds affectionately.
+3. **Progress:** Small daily actions contribute to a growing relationship.
+
+Do not make the user feel guilty for missing a reminder, skipping a day, or taking time away from the application.
+
+---
+
+# 3. VISUAL DESIGN SYSTEM
+
+Establish a consistent design system before building the screens.
+
+## 3.1 Color palette
+
+Use a warm, natural palette inspired by cozy interiors.
+
+- Primary background: `#FFFEF5`
+- Warm cream: `#F8F0E5`
+- Soft peach: `#F5D7BD`
+- Primary accent: `#EF6905`
+- Muted terracotta: `#C98262`
+- Pale yellow: `#FFF4CC`
+- Soft sage: `#C7D6BE`
+- Muted green: `#829B76`
+- Light sky blue: `#D8E8F2`
+- Main text: `#46372F`
+- Secondary text: `#87776B`
+- Borders: `#E8DCCF`
+- White surfaces: `#FFFFFF`
+
+Use orange sparingly for primary actions, highlights, and selected states. Use sage green and pale blue for supportive information.
+
+Avoid excessively saturated colors, harsh black backgrounds, or conventional corporate SaaS styling.
+
+## 3.2 Typography
+
+Use a friendly, highly readable typeface.
+
+Recommended pairing:
+
+- Headings: Nunito or a similar rounded sans-serif.
+- Body text: Inter or a similarly readable sans-serif.
+- Pet dialogue: Nunito with a slightly more expressive treatment.
+
+Use clear typographic hierarchy:
+
+- Large welcoming headlines.
+- Medium-weight section headings.
+- Comfortable body text.
+- Compact metadata.
+- Clearly distinguishable button labels.
+
+Do not make every text element playful. The application must remain easy to use for adults.
+
+## 3.3 UI components
+
+Use:
+
+- Rounded cards.
+- Soft shadows.
+- Subtle translucent surfaces.
+- Warm neutral backgrounds.
+- Rounded buttons.
+- Small illustrated icons.
+- Smooth hover and pressed states.
+- Gentle transitions.
+- Minimal borders.
+- Spacious layouts.
+
+Use a consistent radius system, for example:
+
+- Small controls: 10px.
+- Standard cards: 18px.
+- Large floating panels: 24px.
+- Modal dialogs: 24px.
+
+Avoid excessive glassmorphism, floating panels that obscure the pet, and unnecessary gradients.
+
+## 3.4 Iconography
+
+Use Lucide icons or a consistent equivalent.
+
+Pet-related illustrations can use custom illustrations or 3D-rendered objects.
+
+Do not mix unrelated icon styles.
+
+## 3.5 Responsive design
+
+Desktop is the primary experience.
+
+On desktop, the pet room should occupy most of the viewport.
+
+On mobile:
+
+- Preserve the pet as the focal point.
+- Stack or collapse reminder panels.
+- Use a bottom navigation bar where appropriate.
+- Keep pet actions reachable with one hand.
+- Avoid shrinking the entire desktop layout to fit a narrow screen.
+- Support touch interactions.
+- Respect safe areas on mobile devices.
+
+The pet room must remain usable on smaller screens.
+
+---
+
+# 4. THE PET ROOM: THE HEART OF PAWSE
+
+Build a beautiful, interactive, 3D room.
+
+This is the primary screen users see after onboarding.
+
+It must feel like a real little home rather than a static illustration with UI cards placed on top.
+
+## 4.1 Room composition
+
+Include the following environmental elements:
+
+### Architecture
+- Large windows with visible outdoor scenery.
+- Wooden flooring.
+- Warm, softly colored walls.
+- A window seat or comfortable seating area.
+- A cozy corner for the pet.
+- Bookshelves or small storage furniture.
+
+### Natural elements
+- Indoor plants.
+- Hanging plants near the windows.
+- Gentle leaf movement.
+- Soft sunlight.
+- Floating dust particles, used subtly.
+- Changing outdoor lighting.
+
+### Pet furniture
+- A comfortable pet bed.
+- Food and water bowls.
+- A toy basket.
+- A scratching post for the cat.
+- A cushion or blanket.
+- A small resting area near the window.
+
+### Decorative objects
+- Books.
+- A table lamp.
+- Framed pictures.
+- A small rug.
+- Toys.
+- A water bottle.
+- A clock.
+- Seasonal decorations.
+
+Not every object needs to be interactive initially. Prioritize the elements that contribute to the atmosphere or support the pet's behaviors.
+
+## 4.2 Lighting and atmosphere
+
+The room should use warm, natural lighting.
+
+Support different visual states:
+
+- Morning: golden sunlight entering through the window.
+- Afternoon: bright, soft daylight.
+- Evening: warm orange light and a glowing table lamp.
+- Night: dim ambient lighting with a calm, dark-blue window view.
+
+The room can transition gradually based on the user's local time.
+
+Provide a setting to disable automatic lighting changes or select a preferred atmosphere.
+
+Optional environmental effects include gentle rain outside the window, a cloudy sky, birds in the distance, and falling leaves.
+
+These effects must be lightweight and should not interfere with usability.
+
+## 4.3 Ambient animations
+
+Create subtle, continuous animations:
+
+- Curtains sway gently.
+- Leaves move slightly.
+- Sunlight changes over time.
+- Clouds move outside the window.
+- A lamp glows softly.
+- The pet occasionally blinks.
+- The pet shifts its posture.
+- A toy moves slightly when the pet interacts with it.
+- The pet's chest rises and falls while sleeping.
+- Small environmental particles drift through the sunlight.
+
+Do not animate everything simultaneously.
+
+Use staggered animation timing, subtle movement, and varied intervals to avoid a mechanical appearance.
+
+Animations should pause or reduce when the tab is inactive, the device is under heavy load, or the user prefers reduced motion.
+
+## 4.4 Room interaction
+
+Users should be able to click or tap selected objects.
+
+Examples:
+
+- Pet bed: The pet may walk over and rest.
+- Food bowl: Open the feeding interaction.
+- Toy basket: Open available toys.
+- Window: View the outdoor scenery or trigger a contextual pet behavior.
+- Bookshelf: View learning-related objects or a small collection.
+- Pet: Interact directly with the dog or cat.
+- Decoration: Open customization options when supported.
+
+Use a subtle hover indicator or cursor change to communicate interactivity.
+
+On mobile, provide clear touch feedback.
+
+Do not make every object clickable merely for the sake of interaction.
+
+---
+
+# 5. THE TWO INITIAL PETS
+
+Implement two fully supported pet types:
+
+1. Dog.
+2. Cat.
+
+Both pets must support the same essential product features, but their appearance, animations, personalities, and interactions should differ.
+
+## 5.1 Dog: The cheerful companion
+
+Personality:
+- Affectionate.
+- Playful.
+- Encouraging.
+- Energetic.
+- Loyal.
+
+Visual direction:
+
+A cute, expressive puppy with soft fur, large eyes, a friendly face, natural proportions, and a polished stylized 3D appearance.
+
+Avoid an overly realistic or uncanny appearance.
+
+Required animations:
+
+- Idle breathing.
+- Blinking.
+- Looking around.
+- Tail wagging.
+- Greeting the user.
+- Walking.
+- Sitting.
+- Lying down.
+- Sleeping.
+- Stretching.
+- Eating.
+- Drinking.
+- Playing with a ball.
+- Receiving a treat.
+- Celebrating a completed reminder.
+- Looking toward the user.
+- Approaching the user.
+- Showing affection.
+- Reacting to a click or tap.
+
+Optional behaviors:
+
+- Chasing its tail.
+- Bringing a toy.
+- Tilting its head.
+- Yawning.
+- Getting excited when the user returns.
+
+## 5.2 Cat: The calm companion
+
+Personality:
+- Calm.
+- Curious.
+- Independent.
+- Affectionate in subtle ways.
+- Occasionally playful.
+
+Visual direction:
+
+A cute, expressive cat with soft fur, expressive eyes, a natural tail, and a cozy stylized 3D appearance.
+
+Required animations:
+
+- Idle breathing.
+- Blinking.
+- Slow blinking.
+- Looking around.
+- Tail movement.
+- Greeting the user.
+- Walking.
+- Sitting.
+- Lying down.
+- Sleeping.
+- Stretching.
+- Eating.
+- Drinking.
+- Playing with a toy.
+- Receiving a treat.
+- Purring reaction.
+- Looking toward the user.
+- Approaching the user.
+- Reacting to a click or tap.
+
+Optional behaviors:
+
+- Watching birds through the window.
+- Curling up on a cushion.
+- Playing with a ball of yarn.
+- Grooming itself.
+- Gently nudging the user.
+- Sitting in a sunny spot.
+- Occasionally exploring the room.
+
+## 5.3 Pet personality must influence behavior
+
+Do not implement the dog and cat as identical characters with different models.
+
+Their behavior selection should reflect their personalities.
+
+For example:
+
+- The dog may initiate play more frequently.
+- The cat may spend more time resting.
+- The dog may greet the user enthusiastically.
+- The cat may greet the user with a stretch and a slow blink.
+- The dog may celebrate with a tail wag and a playful jump.
+- The cat may respond with a purr and affectionate head movement.
+
+Allow the user to adjust the intensity of the pet's animations and how frequently it initiates interactions.
+
+---
+
+# 6. END-TO-END ONBOARDING FLOW
+
+Create a complete first-time user journey.
+
+Do not drop the user directly into a dashboard without establishing an emotional connection.
+
+## Step 1: Welcome screen
+
+Display the PAWSE logo and tagline.
+
+Headline:
+
+"A little break. A happier you."
+
+Supporting text:
+
+"Meet your new little companion. Take care of your day, share a few moments together, and watch your friendship grow."
+
+Primary CTA:
+
+"Meet your pet"
+
+Secondary action:
+
+"How it works"
+
+Use a warm, animated preview of the room.
+
+The animation should be short and skippable.
+
+## Step 2: Introduce the concept
+
+Explain the core loop in three short steps:
+
+1. Set reminders for things that matter.
+2. Complete your little daily actions.
+3. Give your pet treats and watch your bond grow.
+
+Include a brief note that the pet is a supportive companion, not another responsibility.
+
+CTA: "Let's begin"
+
+## Step 3: Choose a pet
+
+Display two large interactive character previews.
+
+Dog card:
+- Character preview.
+- Name: Dog.
+- Personality: Cheerful, playful, affectionate.
+- Short introduction.
+
+Cat card:
+- Character preview.
+- Name: Cat.
+- Personality: Calm, curious, independent.
+- Short introduction.
+
+Hovering over or selecting a pet should trigger a short animation.
+
+Dog example: tail wag and head tilt.
+
+Cat example: slow blink and gentle tail movement.
+
+Allow the user to switch between the two before confirming.
+
+CTA: "Choose this pet"
+
+## Step 4: Name the pet
+
+Allow the user to enter a custom pet name.
+
+Examples:
+- Milo.
+- Luna.
+- Mochi.
+- Coco.
+- Toffee.
+
+Include suggested names but do not force a predefined selection.
+
+Validate the input and provide a friendly error if the name is empty or invalid.
+
+CTA: "Meet [Pet Name]"
+
+## Step 5: Tell the pet your name
+
+Ask:
+
+"What should your little buddy call you?"
+
+Allow the user to enter a preferred name.
+
+Explain that this name will be used in greetings and pet dialogue.
+
+Allow the user to skip this step and update it later.
+
+Do not require a legal name or other unnecessary personal information.
+
+## Step 6: Create the room
+
+Show a short, delightful room-introduction sequence.
+
+The room fades in.
+
+The pet appears in its bed or resting area.
+
+The pet notices the user and reacts.
+
+Dog example:
+
+"Hi, [User Name]! I'm [Pet Name]. Is this our little home?"
+
+Cat example:
+
+"Oh, hello, [User Name]. I think I'm going to like it here."
+
+The pet then explores a small portion of the room or settles comfortably.
+
+Make this interaction feel warm without creating a long, unskippable animation.
+
+## Step 7: Set up the first reminders
+
+Introduce the reminder system.
+
+Prompt:
+
+"Let's make your day a little kinder."
+
+Allow users to select suggested reminders.
+
+Suggested options:
+
+- Drink water.
+- Take a short break.
+- Review today's tasks.
+- Complete a checklist.
+- Learn something new.
+- Stretch a little.
+- Wrap up the workday.
+
+Each option should have a short explanation.
+
+Users can select as many as they want, or skip this step.
+
+## Step 8: Configure reminder preferences
+
+Ask users when they want to receive reminders.
+
+Provide simple scheduling controls:
+
+- Specific time.
+- Repeating schedule.
+- Every selected interval.
+- Selected days of the week.
+- Start and end time.
+- Quiet hours.
+
+Offer reasonable suggested schedules without assuming the user follows a standard 9-to-5 routine.
+
+## Step 9: Explain treats and growth
+
+Explain:
+
+"Every time you complete a reminder, you can earn a little treat for [Pet Name]. Feed your buddy, share a happy moment, and watch your friendship grow."
+
+Clarify that missing a reminder does not hurt the pet or reset progress.
+
+## Step 10: Enter the home room
+
+Transition into the main application.
+
+The first home screen should show:
+
+- The complete cozy room.
+- The selected pet.
+- A personalized greeting.
+- The next upcoming reminder.
+- A small daily routine panel.
+- Pet growth status.
+- Primary pet interactions.
+
+The first experience should be immediately usable.
+
+Do not force users through additional setup before allowing them to interact with the pet.
+
+---
+
+# 7. THE MAIN HOME EXPERIENCE
+
+The home screen is the primary product experience.
+
+The 3D room and pet must be visually dominant.
+
+The productivity interface should complement the environment rather than overwhelm it.
+
+## 7.1 Overall layout
+
+Use a full-screen application shell.
+
+### Top navigation
+
+Include:
+
+- PAWSE logo.
+- Home.
+- Reminders.
+- Pet Journal.
+- Habitat.
+- Collection or Shop.
+- User profile.
+- Settings.
+
+On smaller screens, collapse navigation into a compact menu or bottom navigation.
+
+Do not display every navigation item simultaneously if doing so compromises the room.
+
+### Main room
+
+The room occupies the largest portion of the viewport.
+
+The pet should remain visible and unobstructed.
+
+Use responsive positioning for floating UI panels.
+
+### Personalized greeting
+
+Show a small greeting panel near the pet.
+
+Examples:
+
+Dog:
+
+"Hi, [User Name]! 🐾 So happy you're here."
+
+Cat:
+
+"Oh, [User Name]. You're back. Come sit with me."
+
+Do not show the same greeting every time.
+
+Use a controlled collection of greeting variations and avoid repeating the same greeting several times in a row.
+
+### Pet action bar
+
+Provide four primary actions:
+
+- Feed.
+- Play.
+- Pet.
+- Explore.
+
+Each action must work.
+
+If an action requires additional content or permissions, communicate that clearly.
+
+### Reminder panel
+
+Show the next few reminders.
+
+Include:
+- Reminder title.
+- Time.
+- Category icon.
+- Completion status.
+- Snooze action.
+- Skip action.
+- Add reminder CTA.
+
+Use clear visual states for completed, upcoming, snoozed, and missed reminders.
+
+Do not overwhelm the room with a long list.
+
+Provide a "View all reminders" action.
+
+### Pet status panel
+
+Display:
+- Pet name.
+- Current growth stage.
+- Bond progress.
+- Treat inventory.
+- Next growth milestone.
+
+Avoid excessive numerical statistics.
+
+The interface should remain emotionally engaging rather than resembling a pet maintenance simulator.
+
+## 7.2 Floating panel behavior
+
+Floating panels should feel like part of the room's visual language.
+
+Use warm surfaces, soft shadows, rounded corners, and subtle transitions.
+
+Panels should not cover the pet's face or essential interactions.
+
+On smaller screens, panels may become drawers or bottom sheets.
+
+Keep important actions accessible without requiring the user to move the camera or navigate away from the room.
+
+---
+
+# 8. THE REMINDER MANAGEMENT SYSTEM
+
+Build a fully functional reminder feature.
+
+Users should be able to create, view, edit, complete, snooze, skip, pause, and delete reminders.
+
+## 8.1 Reminder categories
+
+Create these categories:
+
+### Self-care
+- Drink water.
+- Stretch.
+- Take a short break.
+- Rest your eyes.
+- Go for a short walk.
+
+### Productivity
+- Review today's tasks.
+- Complete a checklist.
+- Check an important task.
+- Review project progress.
+- Prepare for a meeting.
+
+### Learning
+- Read for ten minutes.
+- Learn a new concept.
+- Practice a skill.
+- Watch a lesson.
+- Review notes.
+
+### Well-being
+- Take a breathing break.
+- Step away from the screen.
+- Spend a few minutes relaxing.
+- Write down a thought.
+- Take a moment for yourself.
+
+### Daily routine
+- Start the day.
+- Plan today's priorities.
+- Take a lunch break.
+- Review completed work.
+- Wrap up the day.
+
+Allow users to create custom categories or use a general category for custom reminders.
+
+Do not present health-related suggestions as medical advice.
+
+## 8.2 Create reminder flow
+
+When the user selects "Add reminder," open a modal or side panel.
+
+Fields:
+
+1. Reminder title.
+2. Optional description.
+3. Category.
+4. Date.
+5. Time.
+6. Repeat frequency.
+7. Selected days.
+8. Reminder interval, where applicable.
+9. End time, where applicable.
+10. Notification preference.
+11. Optional association with a pet interaction.
+
+Repeat options:
+
+- Does not repeat.
+- Daily.
+- Weekdays.
+- Weekends.
+- Selected days.
+- Custom interval.
+
+For interval reminders, allow sensible options such as every 30 minutes, every hour, or every two hours.
+
+Allow a custom interval when practical.
+
+Validate conflicting or invalid schedules.
+
+Actions:
+
+- Save reminder.
+- Cancel.
+
+After saving, show a small confirmation toast.
+
+Example:
+
+"Your reminder is all set. [Pet Name] is ready to help!"
+
+The new reminder must immediately appear in the reminder list and be saved persistently.
+
+## 8.3 Reminder detail
+
+Selecting a reminder should open a detail view containing:
+
+- Title.
+- Description.
+- Category.
+- Scheduled time.
+- Repeat settings.
+- Next occurrence.
+- Current status.
+- Edit action.
+- Pause or resume action.
+- Delete action.
+
+Use confirmation before permanently deleting a reminder.
+
+Do not use a confirmation dialog for every minor interaction.
+
+## 8.4 Reminder completion
+
+When the user completes a reminder:
+
+1. Update the reminder status.
+2. Record the completion time.
+3. Update the user's daily activity.
+4. Award the configured treat reward.
+5. Update the pet's bond progress.
+6. Trigger an appropriate pet reaction.
+7. Display a subtle success message.
+8. Refresh the reminder list and progress indicators.
+
+Example toast:
+
+"Nice! You earned a treat for [Pet Name]."
+
+Do not award the same completion reward twice for the same reminder occurrence.
+
+For repeating reminders, each scheduled occurrence should have a unique completion record.
+
+## 8.5 Snooze
+
+Provide a snooze menu with options such as:
+
+- 5 minutes.
+- 10 minutes.
+- 30 minutes.
+- Choose another time.
+
+When snoozed, update the next notification time and show the new time in the UI.
+
+Snoozing must not count as completing the reminder.
+
+## 8.6 Skip
+
+Allow the user to skip a reminder occurrence.
+
+Skipping must not damage the pet's happiness, bond, growth, or existing progress.
+
+Do not award a completion reward for a skipped occurrence.
+
+## 8.7 Daily checklist
+
+Support a checklist-style reminder that can contain multiple subtasks.
+
+Example:
+
+"Review today's priorities"
+
+- Check urgent tasks.
+- Review upcoming meetings.
+- Select the top three priorities.
+
+Each item should be independently checkable.
+
+Display progress such as "2 of 3 completed."
+
+When all items are completed, allow the user to mark the parent reminder complete.
+
+Prevent accidental duplicate rewards.
+
+---
+
+# 9. REMINDER NOTIFICATIONS AND PET INTERRUPTIONS
+
+Notifications must be useful, gentle, and respectful of the user's focus.
+
+The pet should feel like a friendly companion, not an attention-demanding application.
+
+## 9.1 Notification types
+
+Support:
+
+- In-app reminder notifications.
+- Browser notifications where permission and platform support allow.
+- Optional sound.
+- Optional pet animations when a reminder becomes due.
+- A notification center for recent events.
+
+Use the notification channels that are actually supported by the implemented environment.
+
+Do not claim a reminder was delivered if the application has not successfully scheduled or delivered it.
+
+## 9.2 Notification examples
+
+Water reminder:
+
+"Hey, [User Name]! Time for a water break. Want to drink some water with me? 💧"
+
+Break reminder:
+
+"You've been at it for a while. Let's stretch our legs!"
+
+Task reminder:
+
+"Ready to check off that little task? I'll cheer you on!"
+
+Learning reminder:
+
+"How about learning one small thing today?"
+
+End-of-day reminder:
+
+"We've done enough for today. Time to wind down."
+
+## 9.3 Notification interaction
+
+Each notification should provide appropriate actions.
+
+For example:
+
+- Done.
+- Snooze.
+- Open reminder.
+- Dismiss.
+
+Clicking a notification should take the user to the relevant reminder or application screen.
+
+Do not make every notification open the home screen without context.
+
+## 9.4 Notification settings
+
+Provide:
+
+- Enable or disable reminders.
+- Browser notification permission status.
+- Sound on or off.
+- Pet animation on or off.
+- Quiet hours.
+- Focus mode.
+- Maximum notification frequency.
+- Snooze defaults.
+
+Explain when browser permissions are needed.
+
+If notification permission is denied, reminders must remain accessible inside the application.
+
+## 9.5 Focus mode
+
+When enabled:
+
+- Avoid interruptive pet animations.
+- Suppress nonessential notifications.
+- Keep the pet resting quietly.
+- Allow essential user-configured reminders if desired.
+- Resume normal behavior when focus mode ends.
+
+Do not silently override the user's notification preferences.
+
+---
+
+# 10. FEEDING AND TREAT REWARD SYSTEM
+
+Feeding is a central interaction, but it should never become an unnecessary second task.
+
+## 10.1 Treat economy
+
+Users earn treats by completing reminders and participating in optional activities.
+
+Start with a simple reward system.
+
+For example:
+
+- Complete a reminder: 1 treat.
+- Complete a checklist: a configured reward based on the completed activity, without double-counting the parent reminder.
+- Complete a selected daily routine: a small bonus.
+- Reach a growth milestone: an optional cosmetic reward.
+
+Use configurable reward values rather than hardcoding reward logic throughout the application.
+
+Do not reward opening the website repeatedly or allow accidental double-clicking to generate duplicate rewards.
+
+## 10.2 Feeding interaction
+
+When the user selects "Feed":
+
+1. Open a small treat inventory or feeding interface.
+2. Show available treats.
+3. Allow the user to select a treat.
+4. Animate the pet approaching or responding to the food.
+5. Play the feeding animation.
+6. Decrease the inventory count.
+7. Trigger an affectionate reaction.
+8. Update the bond progress if applicable.
+9. Show a subtle confirmation.
+
+Dog reaction:
+
+The dog wags its tail, eats the treat, and looks up happily.
+
+Cat reaction:
+
+The cat sniffs the treat, eats it, and responds with a satisfied expression or purr.
+
+The animation should be short and skippable.
+
+## 10.3 Treat inventory
+
+Display:
+
+- Treat type.
+- Quantity.
+- Optional description.
+- Whether the treat is available.
+
+Prevent feeding when the inventory is empty.
+
+Show a friendly empty state:
+
+"No treats just yet. Complete a little reminder and come back!"
+
+Provide an action to view available reminders.
+
+## 10.4 Avoid excessive feeding mechanics
+
+Do not make the user feed the pet repeatedly just to maintain its survival.
+
+Do not allow the pet to become ill or unhappy because the user was busy.
+
+Feeding is an affectionate interaction and a reward, not an obligation.
+
+---
+
+# 11. PETTING AND PLAY INTERACTIONS
+
+Create small interactions that make the pet feel responsive.
+
+## 11.1 Petting
+
+Desktop:
+
+- Clicking the pet triggers a context-sensitive reaction.
+- Hovering may reveal a subtle hint.
+- Repeated clicks should not cause repeated, overlapping animations.
+
+Mobile:
+
+- Tapping the pet triggers a reaction.
+- A gentle drag gesture may trigger a petting animation if implemented reliably.
+- Provide visual feedback for touch interactions.
+
+Dog reactions:
+
+- Tail wag.
+- Head tilt.
+- Happy expression.
+- Leaning toward the user.
+
+Cat reactions:
+
+- Slow blink.
+- Head nudge.
+- Gentle purring.
+- Tail movement.
+
+Do not use a single fixed animation for every interaction.
+
+## 11.2 Play
+
+Create a small collection of toys.
+
+Initial toys:
+
+- Ball.
+- Plush toy.
+- Feather toy for the cat.
+- String toy for the cat.
+
+When the user selects "Play":
+
+1. Show available toys.
+2. Select a toy.
+3. Move the pet into an appropriate position.
+4. Trigger a short interactive play sequence.
+5. Allow the user to participate.
+6. Award a modest reward or bond progress when appropriate.
+7. Return the pet to its previous or next idle state.
+
+Keep the interaction short and optional.
+
+## 11.3 Play cooldown
+
+Prevent rewards from being generated repeatedly through rapid interaction.
+
+A cooldown may be used for reward eligibility, but the user should still be able to enjoy harmless animations.
+
+Do not display unnecessary cooldown timers unless the restriction affects the user.
+
+---
+
+# 12. PET GROWTH AND DEVELOPMENT
+
+The pet must develop gradually over days and weeks.
+
+Growth should be persistent, visible, and tied to meaningful interactions.
+
+Do not implement a growth system that advances only when the user refreshes the page.
+
+## 12.1 Growth stages
+
+Create four stages:
+
+### Stage 1: Little One
+
+The pet is small, curious, and still discovering its new home.
+
+Available interactions:
+
+- Basic greetings.
+- Feeding.
+- Petting.
+- Sleeping.
+- Simple play.
+
+### Stage 2: Growing Buddy
+
+The pet becomes more expressive and gains additional behaviors.
+
+Unlock examples:
+
+- New idle animations.
+- Additional play interactions.
+- A new accessory.
+- A personalized greeting variation.
+
+### Stage 3: Best Friend
+
+The pet has a richer personality and a stronger bond with the user.
+
+Unlock examples:
+
+- More complex animations.
+- Additional room interactions.
+- A favorite toy.
+- New affectionate behaviors.
+
+### Stage 4: Forever Companion
+
+The pet has a developed set of behaviors and a personalized environment.
+
+Unlock examples:
+
+- Special greeting animations.
+- Advanced room interactions.
+- Unique cosmetic options.
+- Additional habitat decorations.
+
+The growth stages must apply to both dog and cat.
+
+## 12.2 Growth rules
+
+Growth should be based on a combination of elapsed time and meaningful engagement.
+
+Use a configurable growth model.
+
+For example:
+
+- Elapsed time contributes to developmental eligibility.
+- Completing reminders contributes to growth progress.
+- Optional play and feeding contribute to the bond.
+- Milestones unlock new content.
+
+Do not require users to complete every reminder every day.
+
+Do not make growth depend on a perfect streak.
+
+Do not reset progress when the user takes a break from the application.
+
+The system should be forgiving and should never punish users for being busy.
+
+## 12.3 Pet age and bond
+
+Keep these concepts separate:
+
+**Age:** How long the pet has been part of the user's world.
+
+**Bond:** The relationship developed through care, play, and interactions.
+
+**Growth stage:** The pet's developmental stage, unlocked through configured milestones.
+
+Do not make these three values identical.
+
+## 12.4 Growth progress UI
+
+Display a small progress indicator in the pet panel.
+
+Example:
+
+"Growing Buddy"
+
+"Your friendship is growing."
+
+Use a progress bar or a few small milestone indicators.
+
+Explain the next milestone without making it feel like a demanding objective.
+
+## 12.5 Growth animation
+
+When the pet reaches a new stage:
+
+1. Trigger a short celebratory animation.
+2. Show a gentle visual transformation or transition to the new model.
+3. Display a personalized message.
+4. Unlock the associated behavior or cosmetic.
+5. Update the pet journal.
+6. Save the milestone persistently.
+
+The celebration should be optional to replay and must not block the application for a long period.
+
+---
+
+# 13. PERSONALIZATION AND PET MEMORY
+
+The pet must remember the user in a consistent, meaningful way.
+
+Implement this through structured application data rather than relying on randomly generated dialogue.
+
+## 13.1 Information to remember
+
+Store:
+
+- User's preferred name.
+- Pet's name.
+- Pet species.
+- Selected personality preferences.
+- Preferred greeting style.
+- Pet's current growth stage.
+- Pet's age.
+- Bond progress.
+- Recent milestones.
+- Favorite toys or interactions, when supported.
+- Recent pet interactions.
+- Relevant completed goals.
+
+Only store the information needed for the product experience.
+
+Allow the user to edit their preferred name and pet name.
+
+Provide appropriate controls for viewing, clearing, or resetting saved pet-related data.
+
+## 13.2 Personalized greetings
+
+Create a library of greeting variations for the dog and cat.
+
+Dog examples:
+
+"You're back, [User Name]! I've been waiting to show you my happy tail!"
+
+"Hey, [User Name]! Want to hang out for a little while?"
+
+"There you are! Shall we make today a little brighter?"
+
+Cat examples:
+
+"Oh, [User Name]. My favorite human has returned."
+
+"You're here. Good. I was just about to take another nap."
+
+"Welcome back, [User Name]. Come sit with me for a moment."
+
+Choose greetings based on the current context, such as time of day, last visit, and the pet's personality.
+
+Avoid greetings that imply the pet is suffering, lonely, abandoned, or harmed when the user is away.
+
+## 13.3 First visit versus returning visit
+
+First visit:
+
+The pet introduces itself and welcomes the user into the room.
+
+Returning visit:
+
+The pet recognizes the user and responds with an appropriate greeting.
+
+After a long absence:
+
+The pet welcomes the user warmly without guilt.
+
+Example:
+
+"You're back! I'm happy to see you. Want to spend a little time together?"
+
+Never say:
+
+"Why did you abandon me?"
+
+Never imply the pet was neglected because the user missed a day.
+
+## 13.4 Context-aware conversation
+
+The pet may reference relevant, non-sensitive activity.
+
+For example:
+
+"You completed three little reminders today. Nice work!"
+
+Or:
+
+"Ready to pick up where you left off?"
+
+Do not claim the user completed a task if the completion was never recorded.
+
+Do not invent memories.
+
+If an optional AI conversation feature is added, keep it separate from the core reminder system and make it clear when responses are AI-generated.
+
+The product must remain useful even without an AI API.
+
+---
+
+# 14. PET JOURNAL
+
+Build a journal that records important moments in the relationship.
+
+The journal should be accessible through the main navigation.
+
+## 14.1 Journal entries
+
+Record events such as:
+
+- The day the pet was adopted.
+- The first completed reminder.
+- The first feeding interaction.
+- A new growth stage.
+- A new toy unlocked.
+- A new room decoration.
+- A completed personal milestone.
+- A favorite interaction, if the user chooses to save it.
+
+Each entry should include:
+
+- Date.
+- Event title.
+- Short description.
+- Small illustration or pet thumbnail.
+- Optional associated reward.
+
+Example:
+
+"Day 1: Welcome home, Milo!"
+
+"Today, you and Milo started your little journey together."
+
+Another example:
+
+"Your first week together."
+
+"Milo learned a new trick, and you completed several little reminders along the way."
+
+## 14.2 Journal design
+
+Use a warm, chronological timeline.
+
+Include:
+
+- Date separators.
+- Milestone cards.
+- Small pet illustrations.
+- A clear empty state.
+- Optional filters for growth, care, and personal milestones.
+
+Do not create journal entries for every insignificant interaction.
+
+Prioritize meaningful moments.
+
+---
+
+# 15. HABITAT CUSTOMIZATION
+
+Allow users to personalize the room as they progress.
+
+## 15.1 Customizable elements
+
+Start with:
+
+- Pet bed.
+- Rug.
+- Toys.
+- Plants.
+- Wall decorations.
+- Cushions.
+- Lighting.
+- A few room decorations.
+
+Future options may include:
+
+- Different window views.
+- Seasonal themes.
+- Alternative wall colors.
+- New room layouts.
+- Outdoor habitats.
+- Additional furniture.
+
+## 15.2 Customization flow
+
+1. Open Habitat.
+2. Select an object category.
+3. View available objects.
+4. Preview an object in the room.
+5. Confirm placement.
+6. Save the room configuration.
+7. Return to the room.
+
+Where practical, support dragging objects to reposition them.
+
+Provide clear placement indicators and snapping behavior.
+
+Allow the user to cancel changes or revert to the previous arrangement.
+
+Do not require customization to complete reminders or progress through the pet's growth stages.
+
+## 15.3 Locked objects
+
+Some cosmetic items may unlock through milestones.
+
+Clearly distinguish:
+
+- Available.
+- Selected.
+- Locked.
+- Newly unlocked.
+
+Explain why an item is locked.
+
+Do not use manipulative timers or artificial scarcity.
+
+---
+
+# 16. OPTIONAL COLLECTION AND SHOP
+
+Include a simple collection area for toys, accessories, treats, and room decorations.
+
+For the initial version, use an in-app collection with earned items.
+
+Do not require real-money purchases.
+
+The collection should show:
+
+- Item name.
+- Item category.
+- Preview.
+- Ownership status.
+- Unlock requirement.
+- Equip or place action.
+
+Keep the feature secondary to the pet room.
+
+The core experience must not depend on purchasing premium items.
+
+---
+
+# 17. DAILY ROUTINE AND PROGRESS
+
+Provide a lightweight overview of the user's day.
+
+Do not build a complex analytics dashboard.
+
+## 17.1 Daily overview
+
+Display:
+
+- Reminders completed.
+- Upcoming reminders.
+- Completed checklist items.
+- Treats earned.
+- Recent pet interaction.
+- Optional daily progress summary.
+
+Use a small number of meaningful indicators.
+
+## 17.2 Completion feedback
+
+When a user completes a reminder, show a subtle confirmation.
+
+Example:
+
+"One little thing done. Nice work!"
+
+If several reminders are completed:
+
+"You made time for a few good things today."
+
+Avoid comparing the user's performance against other users.
+
+## 17.3 Daily reset
+
+Daily summaries should update according to the user's local timezone.
+
+Reset daily completion summaries without resetting long-term progress.
+
+Completed historical reminders must remain accessible when relevant.
+
+---
+
+# 18. END-OF-DAY EXPERIENCE
+
+Create an optional end-of-day routine.
+
+When the user completes their wrap-up reminder, the pet can initiate a calming interaction.
+
+Example:
+
+Dog:
+
+"That's enough for today, [User Name]. Let's rest our paws."
+
+Cat:
+
+"All done? Good. The rest can wait. Let's get comfortable."
+
+Offer optional actions:
+
+- Review today's completed reminders.
+- Prepare tomorrow's reminders.
+- Turn on the evening atmosphere.
+- Spend a moment with the pet.
+- Close the application.
+
+The user should never be required to complete the end-of-day routine.
+
+Allow the user to disable these messages.
+
+---
+
+# 19. MICROINTERACTION SYSTEM
+
+Microinteractions are a core part of the product.
+
+Every interaction should have a clear purpose and appropriate feedback.
+
+Build a consistent motion system rather than adding random animations.
+
+## 19.1 Global animation principles
+
+Use:
+
+- Short, responsive transitions for controls.
+- Smooth easing for environmental changes.
+- Slightly longer animations for pet behaviors.
+- Gentle fades and scale changes for panels.
+- Subtle movement rather than exaggerated bouncing.
+- Staggered timing for related elements.
+
+Example timing guidelines:
+
+- Button hover: 120–180 ms.
+- Button press: 80–140 ms.
+- Tooltip: 150–220 ms.
+- Toast entrance: 200–280 ms.
+- Panel transition: 200–350 ms.
+- Pet reaction: 500–1,500 ms.
+- Room lighting transition: 1–3 seconds.
+
+These are starting points. Adjust based on actual interaction testing.
+
+Use reduced-motion preferences when supported.
+
+## 19.2 Button interactions
+
+On hover:
+
+- Slight color change.
+- Subtle elevation or shadow.
+- Optional icon movement.
+
+On press:
+
+- Small scale reduction.
+- Immediate visual feedback.
+
+On completion:
+
+- Transition to the correct state.
+- Show a confirmation where useful.
+
+Disabled buttons must visibly communicate their disabled state.
+
+Do not rely on color alone.
+
+## 19.3 Pet hover and selection
+
+When the cursor moves over an interactive pet:
+
+- Show a subtle highlight or contextual hint.
+- Change the cursor.
+- Avoid large distracting glows.
+
+When selected:
+
+- Trigger a short, context-sensitive animation.
+
+Do not replay the full animation continuously when the pointer remains over the pet.
+
+## 19.4 Reminder completion
+
+When the user completes a reminder:
+
+1. Animate the checkbox.
+2. Update the reminder state.
+3. Show a subtle success indicator.
+4. Trigger the pet's response.
+5. Update the treat count.
+6. Update relevant progress indicators.
+7. Show a small confirmation message.
+
+Use one coordinated interaction sequence.
+
+Avoid multiple overlapping animations, multiple competing toast messages, or repeated reward popups.
+
+## 19.5 Feeding
+
+When feeding the pet:
+
+- The food object moves naturally toward the pet.
+- The pet reacts before eating.
+- The eating animation plays.
+- The treat count updates.
+- A small affectionate response follows.
+
+Avoid excessive particle effects.
+
+## 19.6 Pet growth
+
+When the pet reaches a milestone:
+
+- Gently highlight the pet.
+- Play the growth animation.
+- Show the milestone title.
+- Reveal the unlocked content.
+- Save the milestone.
+
+Use a calm celebration rather than loud visual effects.
+
+## 19.7 Greeting animation
+
+When the user returns:
+
+- Fade the greeting panel in.
+- Trigger the appropriate pet greeting.
+- Keep the room visible.
+- Avoid blocking the reminder panel.
+- Avoid replaying the greeting repeatedly on minor navigation changes.
+
+A greeting should trigger when the user enters the application or explicitly returns to the room, not whenever a React component re-renders.
+
+## 19.8 Ambient animations
+
+Use variation in idle behavior.
+
+For example:
+
+- The dog may blink after a random interval.
+- The cat may look toward the window.
+- The dog may reposition itself.
+- The cat may stretch before resting.
+
+Use bounded, randomized intervals rather than perfectly predictable loops.
+
+Pause nonessential ambient animations when the application is inactive.
+
+## 19.9 Empty states
+
+Every empty state should be warm, clear, and useful.
+
+No reminders:
+
+"Nothing on the schedule yet. Let's add a little reminder for later."
+
+No treats:
+
+"No treats just yet. Complete a reminder to earn your first one."
+
+Empty journal:
+
+"Your story together starts here."
+
+No unlocked decorations:
+
+"Your little room is ready for its next touch of magic."
+
+## 19.10 Error states
+
+Errors should be clear and reassuring.
+
+Examples:
+
+Reminder save failed:
+
+"That reminder didn't save. Please try again."
+
+Notification permission unavailable:
+
+"Browser notifications aren't available right now. Your reminders are still waiting for you inside PAWSE."
+
+Network error:
+
+"Looks like we lost the connection. Your saved progress will sync when you're back online."
+
+Never silently discard user input.
+
+---
+
+# 20. ACCESSIBILITY AND INCLUSIVE UX
+
+Make the application comfortable and usable for a broad audience.
+
+Requirements:
+
+- Keyboard navigation.
+- Visible focus states.
+- Screen-reader labels.
+- Sufficient text contrast.
+- Clear button names.
+- Reduced-motion support.
+- Scalable text.
+- Touch-friendly targets.
+- Accessible modal behavior.
+- Escape-key dismissal where appropriate.
+- Alternative controls for essential pet interactions.
+- Non-color indicators for status.
+- Pause controls for optional animations and sound.
+
+Provide a simplified visual mode if 3D performance is poor.
+
+Essential reminder management must remain possible even when the 3D scene fails to load.
+
+The pet should not be the only way to access important functionality.
+
+---
+
+# 21. XR ROADMAP
+
+Design the architecture so XR can be introduced without rebuilding the entire product.
+
+Do not make XR mandatory for the first release.
+
+The primary experience is the cozy 3D room in a conventional browser.
+
+## Future XR experience
+
+On compatible devices, allow the user to bring their pet into the physical environment.
+
+Possible flow:
+
+1. User selects "Bring my pet into my world."
+2. Explain the required camera or immersive permissions.
+3. Ask the user to grant permission when needed.
+4. Detect a suitable surface where supported.
+5. Place the pet in the environment.
+6. Allow basic interactions.
+7. Let the user return to the regular room.
+
+Possible interactions:
+
+- Place the pet on a desk.
+- Watch the pet sit or walk in place.
+- Feed the pet.
+- Take a photo.
+- Trigger a greeting animation.
+
+Use WebXR where supported or another compatible implementation when appropriate.
+
+Always provide a non-XR fallback.
+
+Do not request camera permissions without an explicit user action.
+
+Do not imply that a browser can perform unsupported spatial tracking.
+
+---
+
+# 22. TECHNICAL ARCHITECTURE
+
+Build the application using a maintainable architecture.
+
+## Frontend
+
+Preferred stack:
+
+- React.
+- TypeScript.
+- Vite.
+- Tailwind CSS or an equivalent styling system.
+- React Three Fiber.
+- Three.js.
+- Drei where appropriate.
+- GSAP or a suitable animation system.
+
+Use reusable components and clear feature boundaries.
+
+Suggested components:
+
+- `AppShell`
+- `PetRoom`
+- `PetCharacter`
+- `PetBehaviorController`
+- `PetInteractionController`
+- `PetStatusPanel`
+- `PetGreeting`
+- `ReminderPanel`
+- `ReminderList`
+- `ReminderForm`
+- `ReminderDetail`
+- `FeedingModal`
+- `PlayInteraction`
+- `PetGrowthPanel`
+- `PetJournal`
+- `HabitatCustomizer`
+- `NotificationCenter`
+- `SettingsPanel`
+
+Do not place the entire application in one component.
+
+## 3D assets
+
+Use optimized GLB or GLTF assets for pets and environment objects.
+
+Prefer rigged pet models with skeletal animations.
+
+Required pet animations must be represented as real animation states or credible equivalents.
+
+If final-quality 3D assets are not available, use high-quality placeholder models while keeping the animation and interaction architecture functional.
+
+Do not simulate a fully interactive 3D room using a static image and invisible click targets.
+
+If a static fallback is necessary for performance or device compatibility, clearly separate it from the interactive 3D experience.
+
+## State management
+
+Use a predictable state-management approach.
+
+Separate:
+
+- User profile.
+- Pet state.
+- Room state.
+- Reminder state.
+- Treat inventory.
+- Growth milestones.
+- Notification preferences.
+- UI state.
+
+Use a suitable state-management library if complexity requires it.
+
+Prevent duplicate state updates and conflicting animations.
+
+## Backend and persistence
+
+Use Firebase or Supabase, depending on the existing project architecture.
+
+Persist:
+
+- User profile.
+- Selected pet.
+- Pet name.
+- Pet growth state.
+- Pet bond.
+- Treat inventory.
+- Completed reminders.
+- Reminder schedules.
+- Pet journal.
+- Room customization.
+- Notification preferences.
+- Unlocked items.
+
+If authentication is required, implement a secure authentication flow.
+
+If the application is initially a local prototype, use IndexedDB or another suitable persistence mechanism rather than relying entirely on React state.
+
+Do not use localStorage as the only long-term persistence mechanism for complex, frequently updated application data if a more suitable option is available.
+
+Do not store credentials or sensitive data in client-side storage.
+
+## Scheduling
+
+Reminder scheduling must handle:
+
+- Timezones.
+- Repeating reminders.
+- Daylight-saving changes where relevant.
+- Snooze.
+- Paused schedules.
+- Completed occurrences.
+- Deleted reminders.
+- Duplicate prevention.
+
+For reliable delivery while the website is closed, implement an appropriate backend scheduling and notification mechanism where supported.
+
+Do not rely on a running browser tab or JavaScript timer as the only reminder-delivery mechanism.
+
+Clearly communicate the limitations of browser notifications.
+
+## Pet behavior engine
+
+Implement a simple state machine for pet behavior.
+
+Possible states:
+
+- Idle.
+- Greeting.
+- Walking.
+- Playing.
+- Eating.
+- Drinking.
+- Petting response.
+- Celebrating.
+- Sleeping.
+- Resting.
+- Exploring.
+
+Define valid transitions.
+
+For example:
+
+Idle → Greeting → Idle.
+
+Idle → Playing → Celebrating → Idle.
+
+Idle → Eating → Affectionate Reaction → Idle.
+
+Idle → Sleeping → Greeting → Idle.
+
+Do not allow unrelated animations to play simultaneously unless the animation system intentionally supports blending.
+
+Provide interruption rules.
+
+For example, a reminder notification should not cancel a feeding animation unless there is a meaningful reason to do so.
+
+## Performance
+
+Optimize for a smooth experience.
+
+Requirements:
+
+- Lazy-load 3D assets.
+- Compress textures.
+- Limit unnecessary real-time lighting.
+- Avoid excessive particle systems.
+- Use instancing where appropriate.
+- Pause unnecessary animation loops.
+- Handle WebGL errors gracefully.
+- Avoid memory leaks when switching scenes.
+- Optimize for lower-powered laptops and mobile devices.
+
+Target a responsive, smooth experience, ideally around 60 FPS on capable devices, while allowing lower-performance devices to use reduced-quality settings.
+
+---
+
+# 23. DATA MODEL
+
+Design a clear, persistent data model.
+
+A possible structure:
+
+### User
+
+- `id`
+- `preferredName`
+- `timezone`
+- `createdAt`
+- `preferences`
+
+### Pet
+
+- `id`
+- `userId`
+- `species`
+- `name`
+- `growthStage`
+- `ageStartedAt`
+- `bondPoints`
+- `growthPoints`
+- `treatBalance`
+- `unlockedItems`
+- `createdAt`
+- `updatedAt`
+
+### Reminder
+
+- `id`
+- `userId`
+- `title`
+- `description`
+- `category`
+- `schedule`
+- `timezone`
+- `isActive`
+- `notificationSettings`
+- `createdAt`
+- `updatedAt`
+
+### Reminder Occurrence
+
+- `id`
+- `reminderId`
+- `scheduledAt`
+- `status`
+- `completedAt`
+- `snoozedUntil`
+- `rewardGranted`
+
+### Pet Interaction
+
+- `id`
+- `petId`
+- `interactionType`
+- `timestamp`
+- `rewardGranted`
+
+### Pet Journal Entry
+
+- `id`
+- `petId`
+- `eventType`
+- `title`
+- `description`
+- `createdAt`
+
+### Room Configuration
+
+- `userId`
+- `roomTheme`
+- `lightingPreference`
+- `selectedObjects`
+- `objectPositions`
+- `updatedAt`
+
+### Notification Preferences
+
+- `userId`
+- `enabled`
+- `quietHours`
+- `soundEnabled`
+- `petAnimationsEnabled`
+- `focusMode`
+- `notificationChannels`
+
+Adapt these structures to the selected backend.
+
+Add validation, appropriate access controls, and unique constraints where needed.
+
+Do not trust client-provided reward amounts or completion claims without appropriate validation.
+
+---
+
+# 24. FUNCTIONAL REQUIREMENTS
+
+The product is not complete unless the following behaviors work.
+
+### Onboarding
+- Select dog or cat.
+- Enter pet name.
+- Enter preferred user name.
+- Create the pet profile.
+- Select suggested reminders.
+- Configure reminder preferences.
+- Enter the room.
+
+### Pet interactions
+- Pet responds to clicks and taps.
+- Pet animations reflect its current state.
+- Feeding consumes an available treat.
+- Playing triggers a supported interaction.
+- Greetings use the saved names.
+- Growth progress updates correctly.
+
+### Reminders
+- Create reminders.
+- Edit reminders.
+- Delete reminders.
+- Complete reminders.
+- Snooze reminders.
+- Skip occurrences.
+- Pause and resume schedules.
+- Complete checklist items.
+- Display upcoming reminders.
+- Save completion history.
+- Avoid duplicate rewards.
+
+### Growth
+- Growth persists across sessions.
+- Growth milestones unlock correctly.
+- Missed reminders do not damage the pet.
+- Time away does not reset progress.
+- The pet's age and bond are separate values.
+
+### Journal
+- Important milestones are recorded.
+- Entries persist.
+- Entries appear in chronological order.
+
+### Room
+- Ambient animations work.
+- Pet actions are interactive.
+- Selected room objects respond appropriately.
+- Lighting settings persist.
+- Customization persists where implemented.
+
+### Notifications
+- Preferences persist.
+- Snooze updates the schedule.
+- Notification permissions are handled correctly.
+- Unsupported channels show appropriate messaging.
+- Focus mode respects the user's preferences.
+
+### Persistence
+- Reloading the page preserves saved progress.
+- Navigating between screens does not reset the pet.
+- Failed saves are communicated.
+- Repeated actions do not generate duplicate rewards.
+
+---
+
+# 25. ERROR HANDLING AND EDGE CASES
+
+Handle the following scenarios:
+
+1. User refreshes during a pet animation.
+2. User closes the website and returns later.
+3. User changes the pet's name.
+4. User edits a reminder shortly before it is due.
+5. User snoozes the same reminder multiple times.
+6. User clicks Done repeatedly.
+7. User has no available treats.
+8. User's internet connection disappears.
+9. Notification permission is denied.
+10. A reminder has passed its scheduled time.
+11. The browser does not support WebXR.
+12. A 3D asset fails to load.
+13. The user disables animations.
+14. The user changes timezones.
+15. A pet reaches a growth milestone.
+16. A reward transaction fails.
+17. The user has no reminders configured.
+18. The user returns after several weeks.
+19. The user deletes a reminder with pending occurrences.
+20. The user opens PAWSE in multiple tabs.
+
+Use clear and friendly messaging.
+
+Maintain data consistency when operations fail.
+
+Do not lose completed reminders or award duplicate treats.
+
+---
+
+# 26. SAMPLE COMPLETE USER JOURNEY
+
+Implement and verify this example journey.
+
+### Day 1: Adoption
+
+Alex opens PAWSE.
+
+Alex selects a dog and names him Milo.
+
+Alex enters their preferred name.
+
+The room appears, and Milo greets Alex.
+
+Alex adds three reminders:
+
+- Drink water at 10:30 AM.
+- Review today's tasks at 11:00 AM.
+- Take a short break at 1:00 PM.
+
+The reminders are saved.
+
+Alex interacts with Milo and explores the room.
+
+### Day 1: First reminder
+
+At 10:30 AM, a reminder is delivered through an available notification channel.
+
+Milo performs a gentle attention animation if the application is active and the user has enabled it.
+
+A message appears:
+
+"Hey, Alex! Let's grab some water together."
+
+Alex drinks water and marks the reminder complete.
+
+The reminder is recorded as completed.
+
+Alex earns a treat.
+
+Milo wags his tail.
+
+Alex selects Feed.
+
+Milo receives the treat and performs a happy animation.
+
+The treat inventory decreases correctly.
+
+The bond progress updates.
+
+### Day 1: Task completion
+
+At 11:00 AM, Alex receives a task reminder.
+
+Alex opens the checklist and completes the required items.
+
+The checklist updates correctly.
+
+Alex completes the parent reminder.
+
+The application records the completion and grants the configured reward once.
+
+Milo celebrates.
+
+### Day 1: End of day
+
+Alex completes the wrap-up reminder.
+
+Milo settles beside his bed.
+
+The room transitions into its evening atmosphere.
+
+Alex sees a summary of completed reminders and can prepare tomorrow's routine.
+
+### Day 2: Return
+
+Alex opens PAWSE again.
+
+The pet profile and room state load from persistent storage.
+
+Milo recognizes Alex's saved preferred name.
+
+Milo performs a greeting animation.
+
+The application does not replay the onboarding flow.
+
+Previously completed reminders remain in the history.
+
+New reminders are shown according to their schedule.
+
+### Later: Growth milestone
+
+After the configured growth requirements are met, Milo reaches a new stage.
+
+The application triggers a short celebration.
+
+A new animation or accessory becomes available.
+
+The milestone appears in the pet journal.
+
+The room and existing reminders remain intact.
+
+This journey must work from beginning to end without manual database edits or page refreshes to trigger expected behavior.
+
+---
+
+# 27. FINAL ACCEPTANCE CRITERIA
+
+Before declaring the application complete, verify that:
+
+- The main screen is a beautiful, cozy, interactive pet room.
+- Both dog and cat can be selected and used.
+- The pet can be named.
+- The user's preferred name is remembered.
+- The pet greets returning users.
+- The pet has multiple meaningful animations.
+- Reminders can be created and managed.
+- Reminder completion triggers the correct reward flow.
+- Treats can be used to feed the pet.
+- Growth progresses over time.
+- The pet's bond and age are separate.
+- Missing reminders never harms the pet.
+- Pet growth and reminder history persist.
+- The pet journal records important events.
+- Room interactions are functional.
+- The application supports responsive layouts.
+- Microinteractions are coordinated and purposeful.
+- Reduced-motion preferences are respected.
+- Notification limitations are communicated honestly.
+- Errors are handled gracefully.
+- The core product works without XR.
+- Every visible button has a meaningful action.
+- Empty states and loading states are designed.
+- No major interaction is represented by a decorative, nonfunctional button.
+- The application does not depend on fabricated backend responses when a real implementation is expected.
+
+---
+
+# 28. IMPLEMENTATION INSTRUCTIONS
+
+Follow this implementation sequence:
+
+**Phase 1: Foundation**
+- Establish the design system.
+- Set up the application architecture.
+- Build the main room and navigation.
+- Implement the pet selection and onboarding flows.
+
+**Phase 2: Pet experience**
+- Integrate the dog and cat models.
+- Implement the pet behavior state machine.
+- Add greetings, petting, feeding, and play.
+- Add ambient room animations.
+
+**Phase 3: Reminder system**
+- Build reminder creation and editing.
+- Implement recurrence and occurrence tracking.
+- Add completion, snooze, skip, and checklist functionality.
+- Integrate notification preferences.
+
+**Phase 4: Growth and personalization**
+- Implement the treat economy.
+- Add growth stages.
+- Persist pet identity and progress.
+- Build the journal and milestone system.
+
+**Phase 5: Habitat and polish**
+- Add room customization.
+- Complete responsive layouts.
+- Implement loading, empty, and error states.
+- Refine microinteractions.
+- Optimize performance.
+
+**Phase 6: Validation**
+- Test the complete user journey.
+- Verify persistence across refreshes.
+- Test duplicate-action prevention.
+- Verify notification scheduling behavior.
+- Test accessibility and responsive layouts.
+- Resolve broken interactions.
+
+If working within an existing codebase, inspect its structure and preserve existing functionality where appropriate. Reuse compatible components and dependencies instead of rebuilding everything unnecessarily.
+
+If the backend or 3D assets are unavailable, implement a clearly defined, functional local prototype and document the limitations. Do not pretend that unsupported functionality has been completed.
+
+Do not stop after producing the first screen. Continue implementing the complete application and verify the major flows.
+
+**The final result should feel like entering a beautiful little room where a familiar pet is waiting, while quietly helping the user make their everyday life a little better.**
+
+Build PAWSE as a cohesive, functional product with a strong emotional identity, polished interactions, maintainable architecture, and a clear path toward immersive XR.
