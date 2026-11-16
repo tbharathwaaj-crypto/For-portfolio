@@ -1,0 +1,61 @@
+<main class="page-shell">
+  <section class="login-card" aria-labelledby="welcome-title">
+    <div class="brand-row">
+      <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+      <span class="brand-name">northstar</span>
+    </div>
+
+    <div class="intro">
+      <p class="eyebrow">YOUR WORKSPACE, IN FOCUS</p>
+      <h1 id="welcome-title">Welcome<br class="mobile-break"> back<span>.</span></h1>
+      <p class="subtitle">Pick up where you left off. Your next great idea is waiting.</p>
+    </div>
+
+    <div class="social-buttons">
+      <button class="social-button" type="button" (click)="continueWith('Google')">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1Z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.65l-3.57-2.77c-.99.66-2.25 1.06-3.71 1.06-2.86 0-5.28-1.93-6.15-4.53H2.16v2.84A11 11 0 0 0 12 23Z"/><path fill="#FBBC05" d="M5.85 14.11a6.6 6.6 0 0 1 0-4.22V7.05H2.16a11 11 0 0 0 0 9.9l3.69-2.84Z"/><path fill="#EA4335" d="M12 5.36c1.62 0 3.06.56 4.2 1.65l3.15-3.15C17.45 2.03 14.97 1 12 1a11 11 0 0 0-9.84 6.05l3.69 2.84C6.72 7.29 9.14 5.36 12 5.36Z"/></svg>
+        <span>Continue with Google</span>
+      </button>
+      <button class="social-button" type="button" (click)="continueWith('Apple')">
+        <svg class="apple-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 1.43c0 1.14-.42 2.2-1.25 3.18-.99 1.16-2.19 1.84-3.48 1.73a3.5 3.5 0 0 1-.03-.44c0-1.1.48-2.29 1.33-3.24 1.06-1.2 2.57-1.94 3.43-1.97v.74ZM21.8 17.26a16.6 16.6 0 0 1-1.66 3.35c-.87 1.32-2.1 2.97-3.63 2.98-1.36.01-1.71-.89-3.56-.88-1.85.01-2.23.9-3.58.89-1.53-.02-2.7-1.5-3.57-2.82C3.36 15.7 3.06 9.8 5.01 6.73c1.39-2.18 3.58-3.47 5.64-3.47 1.7 0 2.77.94 4.18.94 1.36 0 2.2-.94 4.17-.94 1.77 0 3.64.96 5.02 2.61-4.41 2.42-3.69 8.73.78 11.39Z" transform="scale(.83) translate(2.4 1)"/></svg>
+        <span>Continue with Apple</span>
+      </button>
+    </div>
+
+    <div class="divider"><span></span><p>or sign in with email</p><span></span></div>
+
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <label for="email">Email address</label>
+      <div class="input-wrap">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <input id="email" name="email" type="email" placeholder="you@company.com" autocomplete="email" required [(ngModel)]="email">
+      </div>
+
+      <div class="password-label"><label for="password">Password</label><a href="#forgot">Forgot password?</a></div>
+      <div class="input-wrap">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/><path d="M12 14v3"/></svg>
+        <input id="password" name="password" [type]="showPassword ? 'text' : 'password'" placeholder="Enter your password" autocomplete="current-password" required [(ngModel)]="password">
+        <button class="visibility-button" type="button" (click)="showPassword = !showPassword" [attr.aria-label]="showPassword ? 'Hide password' : 'Show password'">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+        </button>
+      </div>
+
+      <label class="remember"><input type="checkbox" name="rememberMe" [(ngModel)]="rememberMe"><span class="checkmark"></span><span>Keep me signed in</span></label>
+      <button class="submit-button" type="submit" [disabled]="loginForm.invalid">Sign in <span aria-hidden="true">→</span></button>
+    </form>
+
+    <p class="notice" aria-live="polite" *ngIf="message">{{ message }}</p>
+    <p class="signup">New to Northstar? <a href="#signup">Create an account <span aria-hidden="true">↗</span></a></p>
+    <p class="legal">By continuing, you agree to our <a href="#terms">Terms</a> and <a href="#privacy">Privacy Policy</a>.</p>
+  </section>
+
+  <aside class="visual-panel" aria-label="Northstar workspace overview">
+    <div class="visual-top"><span class="live-dot"></span> A CLEARER WAY TO WORK</div>
+    <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+    <div class="star-shape" aria-hidden="true">✳</div>
+    <div class="panel-copy"><p class="panel-kicker">MAKE SPACE FOR</p><h2>What’s<br>next.</h2><p>One calm place for your<br>team’s best thinking.</p></div>
+    <div class="floating-card card-note"><span class="note-icon">✦</span><div><b>Project Atlas</b><small>Everything in its place</small></div><span class="card-check">✓</span></div>
+    <div class="floating-card card-progress"><div class="progress-head"><span>Weekly focus</span><b>84%</b></div><div class="progress-track"><span></span></div><small>You're on a roll. Keep going.</small></div>
+    <div class="panel-footer"><span>THOUGHTFULLY BUILT FOR TEAMS</span><span>01 — 03</span></div>
+  </aside>
+</main>
